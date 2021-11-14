@@ -21,7 +21,7 @@
             <button>Log-out</button> -->
         </div>
     </header>
-    <section id="login">
+    <section id="login" class="displayNone">
         <section id="signup">
             <p>If you are using this app for the first time:</p>
             <h2>Sign-up</h2>
@@ -42,24 +42,29 @@
             </form>
         </section>
     </section>
-    <section id="userView" class="displayNone">
+    <!-- class="displayNone" -->
+    <section id="userView">
         <div class="addTask">
             <h2>Add new Task</h2>
             <form>
                 <input type="text" placeholder="new task">
                 <input type="date">
-                <div>
-                    <input id="work" type="radio" name="taskType">
-                    <label for="work">Work</label>
-                </div>
-                <div>
-                    <input id="home" type="radio" name="taskType">
-                    <label for="home">Home</label>
-                </div>
-                <div>
-                    <input id="other" type="radio" name="taskType">
-                    <label for="other">Other</label>
-                </div>
+                <fieldset>
+                    <legend>Category:</legend>
+
+                    <div>
+                        <input id="work" type="radio" name="taskType">
+                        <label for="work">Work</label>
+                    </div>
+                    <div>
+                        <input id="home" type="radio" name="taskType">
+                        <label for="home">Home</label>
+                    </div>
+                    <div>
+                        <input id="other" type="radio" name="taskType">
+                        <label for="other">Other</label>
+                    </div>
+                </fieldset>
                 <button>Add</button>
             </form>
         </div>

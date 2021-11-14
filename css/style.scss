@@ -6,6 +6,8 @@
     color: white;
 }
 
+$generalMargin: 0 20px 0;
+
 body {
     background-color: #01528B;
 }
@@ -17,6 +19,8 @@ body {
 }
 
 header {
+    margin-bottom: 30px;
+
     h1 {
         text-align: center;
         margin-top: 50px;
@@ -33,7 +37,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 30px 20px 0;
+    margin: $generalMargin;
 
     h2 {
         text-align: center;
@@ -66,5 +70,58 @@ header {
 
     section:last-child {
         margin-top: 30px;
+    }
+}
+
+#userView {
+    margin: $generalMargin;
+
+    .addTask {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h2 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        form {
+            display: grid;
+            grid-template-areas:
+                'taskName taskName'
+                'taskCategory taskDate'
+                'taskCategory button';
+            width: 280px;
+
+            input[type=text] {
+                grid-area: taskName;
+                color: black;
+                margin-bottom: 5px;
+                height: 30px;
+            }
+
+            fieldset {
+                grid-area: taskCategory;
+                border: none;
+                font-size: 14px;
+
+                legend {
+                    font-weight: bold;
+                }
+            }
+
+            input[type=date] {
+                grid-area: taskDate;
+                margin-bottom: 5px;
+                color: black;
+            }
+
+            button {
+                grid-area: button;
+                color: black
+            }
+        }
     }
 }

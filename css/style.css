@@ -15,6 +15,10 @@ body {
   display: none;
 }
 
+header {
+  margin-bottom: 30px;
+}
+
 header h1 {
   text-align: center;
   margin-top: 50px;
@@ -39,7 +43,7 @@ header h1 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 30px 20px 0;
+  margin: 0 20px 0;
 }
 
 #login h2 {
@@ -80,5 +84,75 @@ header h1 {
 
 #login section:last-child {
   margin-top: 30px;
+}
+
+#userView {
+  margin: 0 20px 0;
+}
+
+#userView .addTask {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#userView .addTask h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#userView .addTask form {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: 'taskName taskName' 'taskCategory taskDate' 'taskCategory button';
+  width: 280px;
+}
+
+#userView .addTask form input[type=text] {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: taskName;
+  color: black;
+  margin-bottom: 5px;
+  height: 30px;
+}
+
+#userView .addTask form fieldset {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: taskCategory;
+  border: none;
+  font-size: 14px;
+}
+
+#userView .addTask form fieldset legend {
+  font-weight: bold;
+}
+
+#userView .addTask form input[type=date] {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: taskDate;
+  margin-bottom: 5px;
+  color: black;
+}
+
+#userView .addTask form button {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: button;
+  color: black;
 }
 /*# sourceMappingURL=style.css.map */
