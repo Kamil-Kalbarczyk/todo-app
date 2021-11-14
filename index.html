@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo App</title>
+</head>
+
+<body>
+    <section id="sign">
+        <div id="signup">
+            <h2>Sign-up</h2>
+            <form>
+                <input type="email" placeholder="e-mail">
+                <input type="password" placeholder="password">
+                <button>sign-up</button>
+            </form>
+        </div>
+        <div id="signin">
+            <h2>Sign-in</h2>
+            <form>
+                <input type="email" placeholder="e-mail">
+                <input type="password" placeholder="password">
+                <button>sign-in</button>
+            </form>
+        </div>
+    </section>
+    <section id="UserView">
+        <div class="addTask">
+            <h2>Add new Task</h2>
+            <form>
+                <input type="text" placeholder="new task">
+                <input type="date">
+                <div>
+                    <input id="work" type="radio" name="taskType">
+                    <label for="work">Work</label>
+                </div>
+                <div>
+                    <input id="home" type="radio" name="taskType">
+                    <label for="home">Home</label>
+                </div>
+                <div>
+                    <input id="other" type="radio" name="taskType">
+                    <label for="other">Other</label>
+                </div>
+                <button>Add</button>
+            </form>
+        </div>
+    </section>
+    <section id="taskCategories">
+        <h2>Tasks</h2>
+        <div class="taskCategories__changePanel">
+            <h3>Choose category:</h3>
+            <button>Work</button>
+            <button>House</button>
+            <button>Other</button>
+        </div>
+        <div class="taskCategories__work">
+            <h2>Task category: work</h2>
+            <ul>
+                <li>
+                    <span class="task">zrób zadanie domowe</span>
+                    <span class="date">22-11-2021</span>
+                </li>
+            </ul>
+        </div>
+        <div class="taskCategories__house">
+            <h2>Task category: house</h2>
+            <ul>
+                <li>
+                    <span class="task">umyj podłogi</span>
+                    <span class="date">25-11-2021</span>
+                </li>
+            </ul>
+        </div>
+        <div class="taskCategories__other">
+            <h2>Task category: other</h2>
+            <ul>
+                <li>
+                    <span class="task">zrób prezenty na świeta</span>
+                    <span class="date">23-12-2021</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+</body>
+
+</html>
