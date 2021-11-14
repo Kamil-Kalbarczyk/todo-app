@@ -42,7 +42,7 @@
             </form>
         </section>
     </section>
-    <section id="UserView" class="displayNone">
+    <section id="userView" class="displayNone">
         <div class="addTask">
             <h2>Add new Task</h2>
             <form>
@@ -63,43 +63,45 @@
                 <button>Add</button>
             </form>
         </div>
+
+        <div id="taskCategories">
+            <h2>Tasks</h2>
+            <div class="taskCategories__changePanel">
+                <h3>Choose category:</h3>
+                <button>Work</button>
+                <button>House</button>
+                <button>Other</button>
+            </div>
+            <div class="taskCategories__work">
+                <h2>Task category: work</h2>
+                <ul>
+                    <li>
+                        <span class="task">zrób zadanie domowe</span>
+                        <span class="date">22-11-2021</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="taskCategories__house">
+                <h2>Task category: house</h2>
+                <ul>
+                    <li>
+                        <span class="task">umyj podłogi</span>
+                        <span class="date">25-11-2021</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="taskCategories__other">
+                <h2>Task category: other</h2>
+                <ul>
+                    <li>
+                        <span class="task">zrób prezenty na świeta</span>
+                        <span class="date">23-12-2021</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </section>
-    <section id="taskCategories" class="displayNone">
-        <h2>Tasks</h2>
-        <div class="taskCategories__changePanel">
-            <h3>Choose category:</h3>
-            <button>Work</button>
-            <button>House</button>
-            <button>Other</button>
-        </div>
-        <div class="taskCategories__work">
-            <h2>Task category: work</h2>
-            <ul>
-                <li>
-                    <span class="task">zrób zadanie domowe</span>
-                    <span class="date">22-11-2021</span>
-                </li>
-            </ul>
-        </div>
-        <div class="taskCategories__house">
-            <h2>Task category: house</h2>
-            <ul>
-                <li>
-                    <span class="task">umyj podłogi</span>
-                    <span class="date">25-11-2021</span>
-                </li>
-            </ul>
-        </div>
-        <div class="taskCategories__other">
-            <h2>Task category: other</h2>
-            <ul>
-                <li>
-                    <span class="task">zrób prezenty na świeta</span>
-                    <span class="date">23-12-2021</span>
-                </li>
-            </ul>
-        </div>
-    </section>
+
     <script type="module" src="./js/code.js"></script>
 </body>
 

@@ -40,6 +40,15 @@
 
   const auth = getAuth();
 
+  //   variables
+  const sections = document.querySelectorAll('section');
+  const viewSection = (sec) => {
+      sections.forEach((section) => {
+          section.classList.add('displayNone')
+      });
+      sec.classList.remove('displayNone');
+  }
+
   //   render tasks
 
   const workTaskCategorySection = document.querySelector('.taskCategories__work ul');
@@ -106,6 +115,9 @@
       const password = e.target.querySelector('[type="password"]').value;
       signInWithEmailAndPassword(auth, email, password)
           .then(fetch())
+          .then(() => {
+              viewSection(document.querySelector('#userView'));
+          })
           .catch(console.error);
   })
 

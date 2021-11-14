@@ -21,6 +21,10 @@ header h1 {
   text-shadow: 0 0 4px black;
 }
 
+#login.displayNone {
+  display: none;
+}
+
 #login {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -66,6 +70,7 @@ header h1 {
 #login section form input {
   width: 200px;
   margin-bottom: 5px;
+  color: black;
 }
 
 #login section form button {
