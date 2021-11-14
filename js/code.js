@@ -164,3 +164,17 @@
       })
 
   });
+
+  //   view of to-do list
+
+  const buttonsTaskCategoryView = document.querySelectorAll('.taskCategories__changePanel button');
+
+  buttonsTaskCategoryView.forEach((button) => {
+      button.addEventListener('click', () => {
+          buttonsTaskCategoryView.forEach((btn) => {
+              btn.classList.remove('chosenCategory');
+          });
+          button.classList.add('chosenCategory');
+          console.log(button);
+      });
+  });

@@ -8,7 +8,37 @@
 }
 
 body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #01528B;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-width: calc(300px + $generalMargin);
+  max-width: calc(500px + $generalMargin);
+  padding: 0 20px;
 }
 
 .displayNone {
@@ -30,6 +60,7 @@ header h1 {
 }
 
 #login {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -43,7 +74,11 @@ header h1 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 0 20px 0;
+  background-color: rgba(37, 39, 60, 0.6);
+  border-radius: 20px;
+  max-width: 500px;
+  margin: 0 20px;
+  padding: 5%;
 }
 
 #login h2 {
@@ -87,11 +122,12 @@ header h1 {
 }
 
 #userView {
-  margin: 0 20px 0;
+  width: 100%;
+  margin: 0 20px;
   background-color: rgba(37, 39, 60, 0.6);
   border-radius: 20px;
   max-width: 500px;
-  margin: 0 auto;
+  min-width: 300px;
 }
 
 #userView .addTask {
@@ -109,7 +145,6 @@ header h1 {
       -ms-flex-align: center;
           align-items: center;
   max-width: 500px;
-  margin: 0 auto;
   padding: 20px 0;
 }
 
@@ -322,5 +357,6 @@ header h1 {
 #userView #taskCategories .taskCategories__changePanel button.chosenCategory span {
   color: black;
   font-weight: bold;
+  z-index: -1;
 }
 /*# sourceMappingURL=style.css.map */

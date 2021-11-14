@@ -1,4 +1,4 @@
-$generalMargin: 0 20px 0;
+$generalMargin: 0 20px;
 $backgroundSection:rgba(37, 39, 60, .6);
 
 * {
@@ -10,10 +10,23 @@ $backgroundSection:rgba(37, 39, 60, .6);
 }
 
 body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #01528B;
 }
 
-;
+.wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: calc(300px + $generalMargin);
+    max-width: calc(500px + $generalMargin);
+    padding: $generalMargin;
+}
 
 .displayNone {
     display: none;
@@ -34,11 +47,16 @@ header {
 }
 
 #login {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: $backgroundSection;
+    border-radius: 20px;
+    max-width: 500px;
     margin: $generalMargin;
+    padding: 5%;
 
     h2 {
         text-align: center;
@@ -75,11 +93,13 @@ header {
 }
 
 #userView {
+    width: 100%;
+    // flex-grow: 1;
     margin: $generalMargin;
     background-color: $backgroundSection;
     border-radius: 20px;
     max-width: 500px;
-    margin: 0 auto;
+    min-width: 300px;
 
     .addTask {
         display: flex;
@@ -87,7 +107,6 @@ header {
         justify-content: center;
         align-items: center;
         max-width: 500px;
-        margin: 0 auto;
         padding: 20px 0;
 
         h2 {
@@ -263,6 +282,7 @@ header {
                 span {
                     color: black;
                     font-weight: bold;
+                    z-index: -1;
                 }
             }
         }

@@ -14,101 +14,102 @@
 </head>
 
 <body>
-    <header>
-        <h1>To-do App</h1>
-        <div class="header__changeLangAndLogOut">
-            <!-- <button>Change language</button>
+    <div class="wrapper">
+        <header>
+            <h1>To-do App</h1>
+            <div class="header__changeLangAndLogOut">
+                <!-- <button>Change language</button>
             <button>Log-out</button> -->
-        </div>
-    </header>
-    <section id="login" class="displayNone">
-        <section id="signup">
-            <p>If you are using this app for the first time:</p>
-            <h2>Sign-up</h2>
-            <form>
-                <input type="email" placeholder="e-mail">
-                <input type="password" placeholder="password">
-                <button>sign-up</button>
-            </form>
+            </div>
+        </header>
+        <section id="login">
+            <section id="signup">
+                <p>If you are using this app for the first time:</p>
+                <h2>Sign-up</h2>
+                <form>
+                    <input type="email" placeholder="e-mail">
+                    <input type="password" placeholder="password">
+                    <button>sign-up</button>
+                </form>
+            </section>
+
+            <section id="signin">
+                <p>If you are already signed-up:</p>
+                <h2>Sign-in</h2>
+                <form>
+                    <input type="email" placeholder="e-mail">
+                    <input type="password" placeholder="password">
+                    <button>sign-in</button>
+                </form>
+            </section>
         </section>
+        <!-- class="displayNone" -->
+        <section id="userView" class="displayNone">
+            <div class="addTask">
+                <h2>Add new Task</h2>
+                <form>
+                    <textarea type="text" placeholder="new task" required></textarea>
+                    <!-- <input type="text" placeholder="new task"> -->
+                    <input type="date" required>
+                    <!-- <fieldset> -->
+                    <!-- <legend>Category:</legend> -->
 
-        <section id="signin">
-            <p>If you are already signed-up:</p>
-            <h2>Sign-in</h2>
-            <form>
-                <input type="email" placeholder="e-mail">
-                <input type="password" placeholder="password">
-                <button>sign-in</button>
-            </form>
+                    <div>
+                        <input id="work" type="radio" name="taskType">
+                        <label for="work">
+                            <span>Work</span>
+                        </label>
+                    </div>
+                    <div>
+                        <input id="home" type="radio" name="taskType">
+                        <label for="home"><span>Home</span></label>
+                    </div>
+                    <div>
+                        <input id="other" type="radio" name="taskType">
+                        <label for="other"><span>Other</span></label>
+                    </div>
+                    <!-- </fieldset> -->
+                    <button>Add</button>
+                </form>
+            </div>
+
+            <div id="taskCategories">
+                <h2>To-do list:</h2>
+                <div class="taskCategories__changePanel">
+                    <button><span>Work</span></button>
+                    <button><span>House</span></button>
+                    <button><span>Other</span></button>
+                </div>
+                <div class="taskCategories__work">
+                    <h2>Task category: work</h2>
+                    <ul>
+                        <li>
+                            <span class="task">zrób zadanie domowe</span>
+                            <span class="date">22-11-2021</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="taskCategories__house">
+                    <h2>Task category: house</h2>
+                    <ul>
+                        <li>
+                            <span class="task">umyj podłogi</span>
+                            <span class="date">25-11-2021</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="taskCategories__other">
+                    <h2>Task category: other</h2>
+                    <ul>
+                        <li>
+                            <span class="task">zrób prezenty na świeta</span>
+                            <span class="date">23-12-2021</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </section>
-    </section>
-    <!-- class="displayNone" -->
-    <section id="userView">
-        <div class="addTask">
-            <h2>Add new Task</h2>
-            <form>
-                <textarea type="text" placeholder="new task" required></textarea>
-                <!-- <input type="text" placeholder="new task"> -->
-                <input type="date" required>
-                <!-- <fieldset> -->
-                <!-- <legend>Category:</legend> -->
-
-                <div>
-                    <input id="work" type="radio" name="taskType">
-                    <label for="work">
-                        <span>Work</span>
-                    </label>
-                </div>
-                <div>
-                    <input id="home" type="radio" name="taskType">
-                    <label for="home"><span>Home</span></label>
-                </div>
-                <div>
-                    <input id="other" type="radio" name="taskType">
-                    <label for="other"><span>Other</span></label>
-                </div>
-                <!-- </fieldset> -->
-                <button>Add</button>
-            </form>
-        </div>
-
-        <div id="taskCategories">
-            <h2>To-do list:</h2>
-            <div class="taskCategories__changePanel">
-                <button><span>Work</span></button>
-                <button><span>House</span></button>
-                <button><span>Other</span></button>
-            </div>
-            <div class="taskCategories__work">
-                <h2>Task category: work</h2>
-                <ul>
-                    <li>
-                        <span class="task">zrób zadanie domowe</span>
-                        <span class="date">22-11-2021</span>
-                    </li>
-                </ul>
-            </div>
-            <div class="taskCategories__house">
-                <h2>Task category: house</h2>
-                <ul>
-                    <li>
-                        <span class="task">umyj podłogi</span>
-                        <span class="date">25-11-2021</span>
-                    </li>
-                </ul>
-            </div>
-            <div class="taskCategories__other">
-                <h2>Task category: other</h2>
-                <ul>
-                    <li>
-                        <span class="task">zrób prezenty na świeta</span>
-                        <span class="date">23-12-2021</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
+    </div>
     <script type="module" src="./js/code.js"></script>
 </body>
 
