@@ -104,6 +104,11 @@ header h1 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px 0;
+  background-color: #25273c;
+  border-radius: 20px;
 }
 
 #userView .addTask h2 {
@@ -114,45 +119,117 @@ header h1 {
 #userView .addTask form {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: 'taskName taskName' 'taskCategory taskDate' 'taskCategory button';
-  width: 280px;
+      grid-template-areas: 'taskName taskName taskName' 'taskCategoryWork taskCategoryHome taskCategoryOther' 'taskDate taskDate button';
+  row-gap: 12px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
 }
 
 #userView .addTask form input[type=text] {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
+  -ms-grid-column-span: 3;
   grid-area: taskName;
   color: black;
-  margin-bottom: 5px;
-  height: 30px;
+  height: 40px;
+  width: 250px;
+  border-radius: 10px;
+  padding-left: 3px;
+  font-size: 16px;
 }
 
-#userView .addTask form fieldset {
+#userView .addTask form input[type=radio] {
+  display: none;
+}
+
+#userView .addTask form label[for=work] {
   -ms-grid-row: 2;
-  -ms-grid-row-span: 2;
   -ms-grid-column: 1;
-  grid-area: taskCategory;
-  border: none;
-  font-size: 14px;
+  grid-area: taskCategoryWork;
 }
 
-#userView .addTask form fieldset legend {
+#userView .addTask form label[for=home] {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: taskCategoryHome;
+}
+
+#userView .addTask form label[for=other] {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: taskCategoryOther;
+}
+
+#userView .addTask form label {
+  display: block;
+  width: 75px;
+  text-align: center;
+  border: 2px solid #ddd;
+  -webkit-transform: skewX(45deg);
+          transform: skewX(45deg);
+  -webkit-transition: .3s linear;
+  transition: .3s linear;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#userView .addTask form label span {
+  display: block;
+  -webkit-transform: skewX(-45deg);
+          transform: skewX(-45deg);
+  font-size: 14px;
+  -webkit-transition: .3s linear;
+  transition: .3s linear;
+}
+
+#userView .addTask form label:hover {
+  background-color: #ddd;
+}
+
+#userView .addTask form label:hover span {
+  color: black;
   font-weight: bold;
 }
 
 #userView .addTask form input[type=date] {
-  -ms-grid-row: 2;
-  -ms-grid-column: 2;
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
   grid-area: taskDate;
-  margin-bottom: 5px;
   color: black;
+  margin-right: 20px;
+  width: 130px;
+  height: 30px;
+  -ms-grid-column-align: start;
+      justify-self: start;
+  border-radius: 10px;
+  padding-left: 3px;
+}
+
+#userView .addTask form input:focus {
+  outline: none;
 }
 
 #userView .addTask form button {
   -ms-grid-row: 3;
-  -ms-grid-column: 2;
+  -ms-grid-column: 3;
   grid-area: button;
+  width: 75px;
+  height: 30px;
+  font-size: 16px;
+  background-color: transparent;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-transition: .3s linear;
+  transition: .3s linear;
+}
+
+#userView .addTask form button:hover {
+  background-color: #ddd;
   color: black;
+  font-weight: bold;
 }
 /*# sourceMappingURL=style.css.map */

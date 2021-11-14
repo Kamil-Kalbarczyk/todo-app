@@ -81,6 +81,11 @@ header {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px 0;
+        background-color: rgb(37, 39, 60);
+        border-radius: 20px;
 
         h2 {
             text-align: center;
@@ -90,37 +95,98 @@ header {
         form {
             display: grid;
             grid-template-areas:
-                'taskName taskName'
-                'taskCategory taskDate'
-                'taskCategory button';
-            width: 280px;
+                'taskName taskName taskName'
+                'taskCategoryWork taskCategoryHome taskCategoryOther'
+                'taskDate taskDate button';
+            row-gap: 12px;
+            align-items: center;
+            justify-items: center;
 
             input[type=text] {
                 grid-area: taskName;
                 color: black;
-                margin-bottom: 5px;
-                height: 30px;
+                height: 40px;
+                width: 250px;
+                border-radius: 10px;
+                padding-left: 3px;
+                font-size: 16px;
             }
 
-            fieldset {
-                grid-area: taskCategory;
-                border: none;
-                font-size: 14px;
+            input[type=radio] {
+                display: none;
+            }
 
-                legend {
+            label[for=work] {
+                grid-area: taskCategoryWork;
+            }
+
+            label[for=home] {
+                grid-area: taskCategoryHome;
+            }
+
+            label[for=other] {
+                grid-area: taskCategoryOther;
+            }
+
+            label {
+                display: block;
+                width: 75px;
+                text-align: center;
+                border: 2px solid #ddd;
+                transform: skewX(45deg);
+                transition: .3s linear;
+                cursor: pointer;
+                border-radius: 5px;
+
+                span {
+                    display: block;
+                    transform: skewX(-45deg);
+                    font-size: 14px;
+                    transition: .3s linear;
+                }
+            }
+
+            label:hover {
+                background-color: #ddd;
+
+
+                span {
+                    color: black;
                     font-weight: bold;
                 }
             }
 
             input[type=date] {
                 grid-area: taskDate;
-                margin-bottom: 5px;
                 color: black;
+                margin-right: 20px;
+                width: 130px;
+                height: 30px;
+                justify-self: start;
+                border-radius: 10px;
+                padding-left: 3px;
+            }
+
+            input:focus {
+                outline: none;
             }
 
             button {
                 grid-area: button;
-                color: black
+                width: 75px;
+                height: 30px;
+                font-size: 16px;
+                background-color: transparent;
+                border: 2px solid #ddd;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: .3s linear;
+            }
+
+            button:hover {
+                background-color: #ddd;
+                color: black;
+                font-weight: bold;
             }
         }
     }
