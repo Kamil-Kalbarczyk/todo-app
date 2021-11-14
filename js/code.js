@@ -51,6 +51,10 @@
       const q = query(collectionTasks, orderBy("date"));
       const querySnapshot = await getDocs(q);
 
+      workTaskCategorySection.textContent = "";
+      homeTaskCategorySection.textContent = "";
+      otherTaskCategorySection.textContent = "";
+
       querySnapshot.forEach((doc) => {
           const data = doc.data();
           console.log(data.date);

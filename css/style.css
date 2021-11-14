@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Noto Sans', sans-serif;
+  color: white;
+}
+
+body {
+  background-color: #01528B;
+}
+
+.displayNone {
+  display: none;
+}
+
+header h1 {
+  text-align: center;
+  margin-top: 50px;
+  text-shadow: 0 0 4px black;
+}
+
+#login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 30px 20px 0;
+}
+
+#login h2 {
+  text-align: center;
+}
+
+#login p {
+  text-align: center;
+}
+
+#login section form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 7px;
+}
+
+#login section form input {
+  width: 200px;
+  margin-bottom: 5px;
+}
+
+#login section form button {
+  width: 100px;
+  color: black;
+}
+
+#login section:last-child {
+  margin-top: 30px;
+}
+/*# sourceMappingURL=style.css.map */

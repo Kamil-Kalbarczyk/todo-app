@@ -6,28 +6,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>todo App</title>
+    <!-- Nato Sans font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-    <section id="sign">
-        <div id="signup">
+    <header>
+        <h1>To-do App</h1>
+        <div class="header__changeLangAndLogOut">
+            <!-- <button>Change language</button>
+            <button>Log-out</button> -->
+        </div>
+    </header>
+    <section id="login">
+        <section id="signup">
+            <p>If you are using this app for the first time:</p>
             <h2>Sign-up</h2>
             <form>
                 <input type="email" placeholder="e-mail">
                 <input type="password" placeholder="password">
                 <button>sign-up</button>
             </form>
-        </div>
-        <div id="signin">
+        </section>
+
+        <section id="signin">
+            <p>If you are already signed-up:</p>
             <h2>Sign-in</h2>
             <form>
                 <input type="email" placeholder="e-mail">
                 <input type="password" placeholder="password">
                 <button>sign-in</button>
             </form>
-        </div>
+        </section>
     </section>
-    <section id="UserView">
+    <section id="UserView" class="displayNone">
         <div class="addTask">
             <h2>Add new Task</h2>
             <form>
@@ -49,7 +64,7 @@
             </form>
         </div>
     </section>
-    <section id="taskCategories">
+    <section id="taskCategories" class="displayNone">
         <h2>Tasks</h2>
         <div class="taskCategories__changePanel">
             <h3>Choose category:</h3>
@@ -85,6 +100,7 @@
             </ul>
         </div>
     </section>
+    <script type="module" src="./js/code.js"></script>
 </body>
 
 </html>
