@@ -88,6 +88,10 @@ header h1 {
 
 #userView {
   margin: 0 20px 0;
+  background-color: rgba(37, 39, 60, 0.6);
+  border-radius: 20px;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 #userView .addTask {
@@ -105,10 +109,8 @@ header h1 {
       -ms-flex-align: center;
           align-items: center;
   max-width: 500px;
-  margin: 0 auto;
+  margin: 0 auto 30px;
   padding: 20px 0;
-  background-color: #25273c;
-  border-radius: 20px;
 }
 
 #userView .addTask h2 {
@@ -242,5 +244,14 @@ header h1 {
   background-color: #ddd;
   color: black;
   font-weight: bold;
+}
+
+#userView .addTask::after {
+  display: block;
+  content: "";
+  height: 1px;
+  width: 80%;
+  margin-top: 30px;
+  background-color: white;
 }
 /*# sourceMappingURL=style.css.map */
