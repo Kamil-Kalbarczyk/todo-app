@@ -87,7 +87,7 @@ header {
         justify-content: center;
         align-items: center;
         max-width: 500px;
-        margin: 0 auto 30px;
+        margin: 0 auto;
         padding: 20px 0;
 
         h2 {
@@ -212,5 +212,59 @@ header {
         width: 80%;
         margin-top: 30px;
         background-color: white;
+    }
+
+    #taskCategories {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5px;
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        .taskCategories__changePanel {
+            display: flex;
+            gap: 10px;
+
+            button {
+                display: block;
+                width: 75px;
+                text-align: center;
+                border: 2px solid #ddd;
+                transform: skewX(45deg);
+                transition: .3s linear;
+                cursor: pointer;
+                border-radius: 5px;
+                background-color: transparent;
+
+                span {
+                    display: block;
+                    transform: skewX(-45deg);
+                    font-size: 14px;
+                    transition: .3s linear;
+                }
+            }
+
+            button:hover {
+                background-color: #ddd;
+
+                span {
+                    color: black;
+                    font-weight: bold;
+                }
+            }
+
+            button.chosenCategory {
+                background-color: #ddd;
+
+                span {
+                    color: black;
+                    font-weight: bold;
+                }
+            }
+        }
     }
 }
