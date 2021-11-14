@@ -102,13 +102,15 @@ header {
             align-items: center;
             justify-items: center;
 
-            input[type=text] {
+            textarea {
                 grid-area: taskName;
-                color: black;
-                height: 40px;
+                display: block;
+                resize: none;
+                height: 70px;
                 width: 250px;
+                color: black;
                 border-radius: 10px;
-                padding-left: 3px;
+                padding: 3px;
                 font-size: 16px;
             }
 
@@ -149,6 +151,15 @@ header {
             label:hover {
                 background-color: #ddd;
 
+
+                span {
+                    color: black;
+                    font-weight: bold;
+                }
+            }
+
+            label.chosenCategory {
+                background-color: #ddd;
 
                 span {
                     color: black;

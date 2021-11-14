@@ -47,7 +47,18 @@
           section.classList.add('displayNone')
       });
       sec.classList.remove('displayNone');
-  }
+  };
+
+  const labelsTaskCategory = document.querySelectorAll('#userView form div label');
+
+  labelsTaskCategory.forEach((label) => {
+      label.addEventListener('click', () => {
+          labelsTaskCategory.forEach((lab) => {
+              lab.classList.remove('chosenCategory');
+          });
+          label.classList.add('chosenCategory')
+      });
+  });
 
   //   render tasks
 
@@ -66,9 +77,6 @@
 
       querySnapshot.forEach((doc) => {
           const data = doc.data();
-          console.log(data.date);
-          console.log(data.name);
-          console.log(data.category);
           const task = document.createElement('li');
           const taskName = document.createElement('div');
           const taskDate = document.createElement('div');
@@ -83,6 +91,9 @@
           } else {
               otherTaskCategorySection.append(task);
           };
+          labelsTaskCategory.forEach((lab) => {
+              lab.classList.remove('chosenCategory');
+          });
       });
   }
 
@@ -97,7 +108,6 @@
           .then((userCredential) => {
               // Signed in
               const user = userCredential.user;
-              console.log(user)
               // ...
           })
           .catch((error) => {
@@ -127,20 +137,30 @@
 
   addTaskForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const taskName = document.querySelector('.addTask form [type="text"]').value;
-      const taskDate = document.querySelector('.addTask form [type="date"]').value;
+      const taskName = document.querySelector('.addTask form [type="text"]');
+      const taskDate = document.querySelector('.addTask form [type="date"]');
       let taskCategory;
-      document.querySelectorAll('.addTask form div input').forEach(function (category) {
+      const taskCategories = document.querySelectorAll('.addTask form div input');
+      taskCategories.forEach(function (category) {
           if (category.checked) {
               taskCategory = category.getAttribute('id');
-          };
+          }
       });
+      if (!taskCategory) {
+          return alert('chose type of task')
+      }
 
       const docRef = await addDoc(collection(db, "tasks"), {
-          name: taskName,
+          name: taskName.value,
           category: taskCategory,
-          date: taskDate
+          date: taskDate.value
       });
-      console.log("Document written with ID: ", docRef.id);
       fetch();
+
+      taskName.value = "";
+      taskDate.value = "";
+      taskCategories.forEach((category) => {
+          category.checked = false;
+      })
+
   });

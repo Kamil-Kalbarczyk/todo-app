@@ -127,16 +127,18 @@ header h1 {
   justify-items: center;
 }
 
-#userView .addTask form input[type=text] {
+#userView .addTask form textarea {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-area: taskName;
-  color: black;
-  height: 40px;
+  display: block;
+  resize: none;
+  height: 70px;
   width: 250px;
+  color: black;
   border-radius: 10px;
-  padding-left: 3px;
+  padding: 3px;
   font-size: 16px;
 }
 
@@ -189,6 +191,15 @@ header h1 {
 }
 
 #userView .addTask form label:hover span {
+  color: black;
+  font-weight: bold;
+}
+
+#userView .addTask form label.chosenCategory {
+  background-color: #ddd;
+}
+
+#userView .addTask form label.chosenCategory span {
   color: black;
   font-weight: bold;
 }

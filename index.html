@@ -21,7 +21,7 @@
             <button>Log-out</button> -->
         </div>
     </header>
-    <section id="login" class="displayNone">
+    <section id="login">
         <section id="signup">
             <p>If you are using this app for the first time:</p>
             <h2>Sign-up</h2>
@@ -47,8 +47,9 @@
         <div class="addTask">
             <h2>Add new Task</h2>
             <form>
-                <input type="text" placeholder="new task">
-                <input type="date">
+                <textarea type="text" placeholder="new task" required></textarea>
+                <!-- <input type="text" placeholder="new task"> -->
+                <input type="date" required>
                 <!-- <fieldset> -->
                 <!-- <legend>Category:</legend> -->
 
@@ -72,7 +73,7 @@
         </div>
 
         <div id="taskCategories">
-            <h2>Tasks</h2>
+            <h2>To-do list</h2>
             <div class="taskCategories__changePanel">
                 <h3>Choose category:</h3>
                 <button>Work</button>
