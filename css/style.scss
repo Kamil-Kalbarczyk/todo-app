@@ -94,7 +94,6 @@ header {
 
 #userView {
     width: 100%;
-    // flex-grow: 1;
     margin: $generalMargin;
     background-color: $backgroundSection;
     border-radius: 20px;
@@ -239,6 +238,7 @@ header {
         justify-content: center;
         align-items: center;
         margin-top: 5px;
+        padding-bottom: 20px;
 
         h2 {
             margin-bottom: 10px;
@@ -250,6 +250,7 @@ header {
 
             button {
                 display: block;
+                margin-bottom: 20px;
                 width: 75px;
                 text-align: center;
                 border: 2px solid #ddd;
@@ -286,5 +287,47 @@ header {
                 }
             }
         }
+
+        .taskCategories__work,
+        .taskCategories__house,
+        .taskCategories__other {
+            width: 80%;
+
+            ul {
+                list-style: none;
+
+                li {
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 7px 0;
+                    border-bottom: 1px solid white;
+
+                    textarea {
+                        flex-grow: 1;
+                        background-color: transparent;
+                        border: none;
+                        // height: auto;
+                        resize: none;
+                        font-size: 16px;
+                    }
+
+                    textarea:focus {
+                        outline: none;
+                        border: none
+                    }
+
+                    div:nth-child(2) {
+                        min-width: 90px;
+                        text-align: right;
+                    }
+                }
+
+                li:last-child {
+                    border-bottom: none;
+                }
+            }
+        }
+
+
     }
 }

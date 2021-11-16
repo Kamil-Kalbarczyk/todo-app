@@ -78,8 +78,9 @@
       querySnapshot.forEach((doc) => {
           const data = doc.data();
           const task = document.createElement('li');
-          const taskName = document.createElement('div');
+          const taskName = document.createElement('textarea');
           const taskDate = document.createElement('div');
+          taskName.setAttribute('readonly', true);
           taskName.textContent = data.name;
           taskDate.textContent = data.date;
           task.append(taskName);
@@ -175,6 +176,12 @@
               btn.classList.remove('chosenCategory');
           });
           button.classList.add('chosenCategory');
-          console.log(button);
+          const taskCategory = document.querySelector(`.taskCategories__${button.getAttribute('data-taskCategory')}`);
+          if (button.getAttribute('data-taskCategory') === taskCategory.getAttribute('data-taskCategory')) {
+              document.querySelectorAll('div[data-taskCategory]').forEach((cat) => {
+                  cat.classList.add('displayNone')
+              });
+              taskCategory.classList.remove('displayNone');
+          }
       });
   });

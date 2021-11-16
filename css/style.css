@@ -305,6 +305,7 @@ header h1 {
       -ms-flex-align: center;
           align-items: center;
   margin-top: 5px;
+  padding-bottom: 20px;
 }
 
 #userView #taskCategories h2 {
@@ -320,6 +321,7 @@ header h1 {
 
 #userView #taskCategories .taskCategories__changePanel button {
   display: block;
+  margin-bottom: 20px;
   width: 75px;
   text-align: center;
   border: 2px solid #ddd;
@@ -358,5 +360,62 @@ header h1 {
   color: black;
   font-weight: bold;
   z-index: -1;
+}
+
+#userView #taskCategories .taskCategories__work,
+#userView #taskCategories .taskCategories__house,
+#userView #taskCategories .taskCategories__other {
+  width: 80%;
+}
+
+#userView #taskCategories .taskCategories__work ul,
+#userView #taskCategories .taskCategories__house ul,
+#userView #taskCategories .taskCategories__other ul {
+  list-style: none;
+}
+
+#userView #taskCategories .taskCategories__work ul li,
+#userView #taskCategories .taskCategories__house ul li,
+#userView #taskCategories .taskCategories__other ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 7px 0;
+  border-bottom: 1px solid white;
+}
+
+#userView #taskCategories .taskCategories__work ul li textarea,
+#userView #taskCategories .taskCategories__house ul li textarea,
+#userView #taskCategories .taskCategories__other ul li textarea {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  background-color: transparent;
+  border: none;
+  resize: none;
+  font-size: 16px;
+}
+
+#userView #taskCategories .taskCategories__work ul li textarea:focus,
+#userView #taskCategories .taskCategories__house ul li textarea:focus,
+#userView #taskCategories .taskCategories__other ul li textarea:focus {
+  outline: none;
+  border: none;
+}
+
+#userView #taskCategories .taskCategories__work ul li div:nth-child(2),
+#userView #taskCategories .taskCategories__house ul li div:nth-child(2),
+#userView #taskCategories .taskCategories__other ul li div:nth-child(2) {
+  min-width: 90px;
+  text-align: right;
+}
+
+#userView #taskCategories .taskCategories__work ul li:last-child,
+#userView #taskCategories .taskCategories__house ul li:last-child,
+#userView #taskCategories .taskCategories__other ul li:last-child {
+  border-bottom: none;
 }
 /*# sourceMappingURL=style.css.map */

@@ -22,7 +22,7 @@
             <button>Log-out</button> -->
             </div>
         </header>
-        <section id="login">
+        <section id="login" class="displayNone">
             <section id="signup">
                 <p>If you are using this app for the first time:</p>
                 <h2>Sign-up</h2>
@@ -44,7 +44,7 @@
             </section>
         </section>
         <!-- class="displayNone" -->
-        <section id="userView" class="displayNone">
+        <section id="userView">
             <div class="addTask">
                 <h2>Add new Task</h2>
                 <form>
@@ -76,21 +76,21 @@
             <div id="taskCategories">
                 <h2>To-do list:</h2>
                 <div class="taskCategories__changePanel">
-                    <button><span>Work</span></button>
-                    <button><span>House</span></button>
-                    <button><span>Other</span></button>
+                    <button data-taskCategory="work"><span>Work</span></button>
+                    <button data-taskCategory="house"><span>House</span></button>
+                    <button data-taskCategory="other"><span>Other</span></button>
                 </div>
-                <div class="taskCategories__work">
-                    <h2>Task category: work</h2>
+                <div class="taskCategories__work displayNone" data-taskCategory="work">
+                    <!-- <h2>Task category: work</h2> -->
                     <ul>
                         <li>
-                            <span class="task">zrób zadanie domowe</span>
-                            <span class="date">22-11-2021</span>
+                            <div>Task</div>
+                            <div>Date</div>
                         </li>
                     </ul>
                 </div>
-                <div class="taskCategories__house">
-                    <h2>Task category: house</h2>
+                <div class="taskCategories__house displayNone" data-taskCategory="house">
+                    <!-- <h2>Task category: house</h2> -->
                     <ul>
                         <li>
                             <span class="task">umyj podłogi</span>
@@ -98,8 +98,8 @@
                         </li>
                     </ul>
                 </div>
-                <div class="taskCategories__other">
-                    <h2>Task category: other</h2>
+                <div class="taskCategories__other displayNone" data-taskCategory="other">
+                    <!-- <h2>Task category: other</h2> -->
                     <ul>
                         <li>
                             <span class="task">zrób prezenty na świeta</span>
