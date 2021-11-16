@@ -78,9 +78,8 @@
       querySnapshot.forEach((doc) => {
           const data = doc.data();
           const task = document.createElement('li');
-          const taskName = document.createElement('textarea');
+          const taskName = document.createElement('div');
           const taskDate = document.createElement('div');
-          taskName.setAttribute('readonly', true);
           taskName.textContent = data.name;
           taskDate.textContent = data.date;
           task.append(taskName);

@@ -293,6 +293,20 @@ header {
         .taskCategories__other {
             width: 80%;
 
+            .taskCategories__headers {
+                display: flex;
+                justify-content: space-between;
+                padding: 7px 0;
+                border-bottom: 1px solid white;
+
+                div {
+                    min-width: 90px;
+                    text-align: center;
+                    font-weight: bold;
+                    letter-spacing: .5px;
+                }
+            }
+
             ul {
                 list-style: none;
 
@@ -302,23 +316,13 @@ header {
                     padding: 7px 0;
                     border-bottom: 1px solid white;
 
-                    textarea {
-                        flex-grow: 1;
-                        background-color: transparent;
-                        border: none;
-                        // height: auto;
-                        resize: none;
-                        font-size: 16px;
-                    }
-
-                    textarea:focus {
-                        outline: none;
-                        border: none
+                    div {
+                        word-wrap: break-word;
                     }
 
                     div:nth-child(2) {
                         min-width: 90px;
-                        text-align: right;
+                        text-align: left;
                     }
                 }
 
@@ -327,7 +331,5 @@ header {
                 }
             }
         }
-
-
     }
 }
