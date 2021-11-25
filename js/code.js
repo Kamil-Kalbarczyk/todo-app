@@ -14,7 +14,10 @@
       query,
       where,
       getDocs,
-      orderBy
+      orderBy,
+      doc,
+      setDoc,
+      updateDoc
   } from 'https://www.gstatic.com/firebasejs/9.3.0/firebase-firestore.js';
   import {
       getAuth,
@@ -39,6 +42,14 @@
   const db = getFirestore();
 
   const auth = getAuth();
+
+  //change data
+  //   const washingtonRef = doc(db, "done", "task");
+
+  // Set the "capital" field of the city 'DC'
+  //   await updateDoc(washingtonRef, {
+  //       done: true
+  //   });
 
   //   variables
   const sections = document.querySelectorAll('section');
@@ -66,6 +77,11 @@
   const homeTaskCategorySection = document.querySelector('.taskCategories__house ul');
   const otherTaskCategorySection = document.querySelector('.taskCategories__other ul');
 
+  /* function removeTask(e) {
+      console.log(e);
+      console.log(this);
+  } */
+
   const fetch = async () => {
       const collectionTasks = collection(db, "tasks")
       const q = query(collectionTasks, orderBy("date"));
@@ -82,20 +98,37 @@
           const taskDate = document.createElement('div');
           taskName.textContent = data.name;
           taskDate.textContent = data.date;
+          const doneButton = document.createElement('button');
+          doneButton.innerHTML = '<i class="far fa-check-circle"></i>';
+          task.append(doneButton);
           task.append(taskName);
           task.append(taskDate);
-          if (data.category === 'work') {
-              workTaskCategorySection.append(task);
-          } else if (data.category === 'home') {
-              homeTaskCategorySection.append(task);
-          } else {
-              otherTaskCategorySection.append(task);
+          if (data.done === false) {
+              if (data.category === 'work') {
+                  workTaskCategorySection.append(task);
+              } else if (data.category === 'home') {
+                  homeTaskCategorySection.append(task);
+              } else {
+                  otherTaskCategorySection.append(task);
+              }
           };
+
+          doneButton.addEventListener('click', async () => {
+              await updateDoc(data, {
+                  "done": "true",
+              });
+              console.log(data.done);
+              console.log(data.name);
+              console.log(data);
+
+          });
+
           labelsTaskCategory.forEach((lab) => {
               lab.classList.remove('chosenCategory');
           });
       });
-  }
+  };
+
 
   //register user
 
@@ -153,7 +186,8 @@
       const docRef = await addDoc(collection(db, "tasks"), {
           name: taskName.value,
           category: taskCategory,
-          date: taskDate.value
+          date: taskDate.value,
+          done: false
       });
       fetch();
 

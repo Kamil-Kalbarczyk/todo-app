@@ -36,8 +36,8 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  min-width: calc(300px + $generalMargin);
-  max-width: calc(500px + $generalMargin);
+  min-width: calc(300px + 20px);
+  max-width: calc(500px + 20px);
   padding: 0 20px;
 }
 
@@ -418,8 +418,55 @@ header h1 {
 #userView #taskCategories .taskCategories__work ul li div:nth-child(2),
 #userView #taskCategories .taskCategories__house ul li div:nth-child(2),
 #userView #taskCategories .taskCategories__other ul li div:nth-child(2) {
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  width: 100%;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+#userView #taskCategories .taskCategories__work ul li div:last-child,
+#userView #taskCategories .taskCategories__house ul li div:last-child,
+#userView #taskCategories .taskCategories__other ul li div:last-child {
   min-width: 90px;
   text-align: left;
+}
+
+#userView #taskCategories .taskCategories__work ul li button,
+#userView #taskCategories .taskCategories__house ul li button,
+#userView #taskCategories .taskCategories__other ul li button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 20px;
+  padding-right: 10px;
+  -webkit-transition: .3s linear;
+  transition: .3s linear;
+  cursor: pointer;
+}
+
+#userView #taskCategories .taskCategories__work ul li button i,
+#userView #taskCategories .taskCategories__house ul li button i,
+#userView #taskCategories .taskCategories__other ul li button i {
+  -webkit-transition: .3s linear;
+  transition: .3s linear;
+}
+
+#userView #taskCategories .taskCategories__work ul li button:hover > i,
+#userView #taskCategories .taskCategories__house ul li button:hover > i,
+#userView #taskCategories .taskCategories__other ul li button:hover > i {
+  color: gray;
+}
+
+#userView #taskCategories .taskCategories__work ul li button:hover ~ div,
+#userView #taskCategories .taskCategories__house ul li button:hover ~ div,
+#userView #taskCategories .taskCategories__other ul li button:hover ~ div {
+  color: gray;
+  text-decoration: line-through;
 }
 
 #userView #taskCategories .taskCategories__work ul li:last-child,
