@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>todo App</title>
+    <title>Todo App - Kamil Kalbarczyk</title>
+
     <!-- Nato Sans font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,14 +21,8 @@
 
 <body>
     <div class="wrapper">
-        <header>
-            <h1>To-do App</h1>
-            <div class="header__changeLangAndLogOut">
-                <!-- <button>Change language</button>
-            <button>Log-out</button> -->
-            </div>
-        </header>
-        <section id="login" class="displayNone">
+        <h1>To-do App</h1>
+        <section id="login">
             <section id="signup">
                 <p>If you are using this app for the first time:</p>
                 <h2>Sign-up</h2>
@@ -42,72 +37,38 @@
                 <p>If you are already signed-up:</p>
                 <h2>Sign-in</h2>
                 <form>
-                    <input type="email" placeholder="e-mail">
-                    <input type="password" placeholder="password">
+                    <input type="email" placeholder="e-mail" required>
+                    <input type="password" placeholder="password" required>
                     <button>sign-in</button>
                 </form>
             </section>
+            <section>
+                <p>password must be at least 6 characters long</p>
+                <p>e-mail address must to be correct</p>
+            </section>
         </section>
-
-        <section id="userView">
+        <section id="userInterface" class="displayNone">
+            <div class="logout">
+                <p></p>
+                <button title="log out"><i class="fas fa-power-off"></i></button>
+            </div>
             <div class="addTask">
                 <h2>Add new Task</h2>
-                <form>
-                    <textarea type="text" placeholder="new task" required></textarea>
-                    <input type="date" required>
 
-                    <div>
-                        <input id="work" type="radio" name="taskType">
-                        <label for="work">
-                            <span>Work</span>
-                        </label>
-                    </div>
-                    <div>
-                        <input id="home" type="radio" name="taskType">
-                        <label for="home"><span>Home</span></label>
-                    </div>
-                    <div>
-                        <input id="other" type="radio" name="taskType">
-                        <label for="other"><span>Other</span></label>
-                    </div>
+                <form>
+                    <textarea placeholder="new task" required></textarea>
                     <button>Add</button>
                 </form>
             </div>
 
-            <div id="taskCategories">
+            <div id="taskList">
                 <h2>To-do list:</h2>
-                <div class="taskCategories__changePanel">
-                    <button data-taskCategory="work"><span>Work</span></button>
-                    <button data-taskCategory="house"><span>House</span></button>
-                    <button data-taskCategory="other"><span>Other</span></button>
-                </div>
-                <div class="taskCategories__work displayNone" data-taskCategory="work">
-                    <div class="taskCategories__headers">
-                        <div>Task</div>
-                        <div>Date</div>
-                    </div>
-                    <ul>
-                    </ul>
-                </div>
-                <div class="taskCategories__house displayNone" data-taskCategory="house">
-                    <div class="taskCategories__headers">
-                        <div>Task</div>
-                        <div>Date</div>
-                    </div>
-                    <ul>
-                    </ul>
-                </div>
-                <div class="taskCategories__other displayNone" data-taskCategory="other">
-                    <div class="taskCategories__headers">
-                        <div>Task</div>
-                        <div>Date</div>
-                    </div>
-                    <ul>
-                    </ul>
-                </div>
+                <ul>
+                </ul>
             </div>
         </section>
     </div>
+
     <script type="module" src="./js/code.js"></script>
 </body>
 
